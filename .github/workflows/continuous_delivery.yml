@@ -22,5 +22,3 @@ jobs:
           file: ./dockerfile
           push: true
           tags: ghcr.io/ci-cd-dhbw-hdh-pschoeppner/jonas.proell:lastest
-      - run: docker build . -t svelte-docker
-        # upload container and start
