@@ -52,5 +52,8 @@ export function getRandInt(min: number, max: number): number {
 export const todoList = writable<TodoItem[]>(getTodosFromLocalStorage());
 
 function getTodosFromLocalStorage(): TodoItem[] {
-  return JSON.parse(localStorage.getItem("todos") || "[]") || [];
+  const todos: TodoItem[] = JSON.parse(
+    localStorage.getItem("todos") || "[]"
+  ) as TodoItem[];
+  return todos;
 }
