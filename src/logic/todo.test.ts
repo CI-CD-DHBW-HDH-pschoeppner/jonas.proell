@@ -69,4 +69,11 @@ describe("generateColor", () => {
       expect(rand).toBeLessThanOrEqual(150);
     }
   });
+
+  it("should return random values", () => {
+    let rand1 = getRandInt(50, 150);
+    let rand2 = getRandInt(50, 150);
+
+    expect(rand1 === rand2).toBe(false);
+  });
 });
