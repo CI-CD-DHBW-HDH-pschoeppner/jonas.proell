@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "eslint": "^8.36.0",
     "eslint-plugin-svelte3": "^4.0.0",
     "eslint-plugin-unused-imports": "^2.0.0",
     "nanoid": "^3.3.4",
