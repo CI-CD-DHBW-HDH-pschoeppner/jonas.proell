@@ -1,6 +1,6 @@
 import { generateID, getRandInt, validateTodo } from "./todo";
 
-let todos = [
+const todos = [
   {
     id: "test1",
     done: false,
@@ -24,16 +24,16 @@ describe("generateID", () => {
   it("should generate random ids of length 5", () => {
     // run 5 test cases
     for (let i = 0; i <= 5; i++) {
-      let id = generateID();
+      const id = generateID();
       expect(id.length).toBe(5);
     }
   });
 
   it("should generate unique ids", () => {
-    let ids = [];
+    const ids = [];
     // run 5 test cases
     for (let i = 0; i <= 5; i++) {
-      let id = generateID();
+      const id = generateID();
       ids.push(id);
     }
 
@@ -64,15 +64,15 @@ describe("generateColor", () => {
   it("should return values between 50 and 150", () => {
     // run test case 5 times
     for (let i = 0; i < 5; i++) {
-      let rand = getRandInt(50, 150);
+      const rand = getRandInt(50, 150);
       expect(rand).toBeGreaterThanOrEqual(50);
       expect(rand).toBeLessThanOrEqual(150);
     }
   });
 
   it("should return random values", () => {
-    let rand1 = getRandInt(50, 150);
-    let rand2 = getRandInt(50, 150);
+    const rand1 = getRandInt(50, 150);
+    const rand2 = getRandInt(50, 150);
 
     expect(rand1 === rand2).toBe(false);
   });
