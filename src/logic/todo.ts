@@ -37,10 +37,16 @@ export function formatTodo(todo: TodoItem): TodoItem {
 // generate a random rgb color
 // each value (r,g,b) should be between 50 and 150
 export function generateColor(): string {
-  let o = Math.round,
-    r = Math.random,
-    s = 255;
-  return "(" + o(r() * s) + "," + o(r() * s) + "," + o(r() * s) + ")";
+  return `rgb(${getRandInt(50, 150)},${getRandInt(50, 150)},${getRandInt(
+    50,
+    150
+  )})`;
+}
+
+function getRandInt(min: number, max: number): number {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 export const todoList = writable<TodoItem[]>([]);
