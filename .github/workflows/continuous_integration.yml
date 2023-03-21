@@ -1,4 +1,4 @@
-name: NPM Lint and Test
+name: Continous Integration
 on: [push]
 permissions:
   contents: write
