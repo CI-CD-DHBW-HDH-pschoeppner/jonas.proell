@@ -40,7 +40,7 @@ export function generateColor(): string {
   let o = Math.round,
     r = Math.random,
     s = 255;
-  return "rgba(" + o(r() * s) + "," + o(r() * s) + "," + o(r() * s) + ")";
+  return "(" + o(r() * s) + "," + o(r() * s) + "," + o(r() * s) + ")";
 }
 
 export const todoList = writable<TodoItem[]>([]);
