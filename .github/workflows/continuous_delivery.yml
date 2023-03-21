@@ -1,5 +1,5 @@
 name: Continuous Delivery
-on: [push]
+on: [push] # optional: run only on main branch
 permissions:
   contents: write
   packages: write
