@@ -1,4 +1,4 @@
-name: Publish to Container Registy
+name: Continuous Delivery
 on: [push]
 permissions:
   contents: write
