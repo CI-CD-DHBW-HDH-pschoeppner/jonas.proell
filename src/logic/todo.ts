@@ -18,7 +18,7 @@ export function generateID(): string {
 // the todo isn't contained in the todos array (case insensitive)
 export function validateTodo(todo: TodoItem, todos: TodoItem[]): boolean {
   if (todo.value.length > 255) return false;
-  if (!todo.value) return false;
+  if (todo.value.trim().length === 0) return false;
   if (todos.some((t) => t.value.toLowerCase() === todo.value.toLowerCase()))
     return false;
 
