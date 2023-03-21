@@ -49,4 +49,8 @@ export function getRandInt(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-export const todoList = writable<TodoItem[]>([]);
+export const todoList = writable<TodoItem[]>(getTodosFromLocalStorage());
+
+function getTodosFromLocalStorage(): TodoItem[] {
+  return JSON.parse(localStorage.getItem("todos") || "[]") || [];
+}

@@ -12,6 +12,7 @@
 
   todoList.subscribe((value) => {
     todos = value;
+    localStorage.setItem("todos", JSON.stringify(value));
   });
 
   function submitHandler(event: SubmitEvent) {
@@ -33,6 +34,7 @@
     if (validateTodo(todo, todos)) {
       todos.push(formatTodo(todo));
       todos = todos;
+      todoList.set(todos);
     }
   }
 </script>
