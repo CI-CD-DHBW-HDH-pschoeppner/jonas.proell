@@ -1,4 +1,5 @@
 import { writable } from "svelte/store";
+import { nanoid } from "nanoid";
 
 export class TodoItem {
   id = "";
@@ -8,8 +9,7 @@ export class TodoItem {
 
 // this function must return a unique ID every time it is called
 export function generateID(): string {
-    // TODO: implement
-    return ""
+  return nanoid(5);
 }
 
 // make sure, that
@@ -17,25 +17,30 @@ export function generateID(): string {
 // the value isn' empty
 // the todo isn't contained in the todos array (case insensitive)
 export function validateTodo(todo: TodoItem, todos: TodoItem[]): boolean {
-  // TODO: implement
-  return false;
+  if (todo.value.length > 255) return false;
+  if (!todo.value) return false;
+  if (todos.some((t) => t.value.toLowerCase() === todo.value.toLowerCase()))
+    return false;
+
+  return true;
 }
 
 // capitalize the first letter of the todo
 export function formatTodo(todo: TodoItem): TodoItem {
-  // TODO: implement
   return {
-    id: "",
-    value: "",
-    done: false
-  }
+    id: todo.id,
+    value: todo.value.charAt(0).toUpperCase() + todo.value.slice(1),
+    done: todo.done,
+  };
 }
 
 // generate a random rgb color
 // each value (r,g,b) should be between 50 and 150
 export function generateColor(): string {
-  // TODO: implement
-  return ""
+  let o = Math.round,
+    r = Math.random,
+    s = 255;
+  return "rgba(" + o(r() * s) + "," + o(r() * s) + "," + o(r() * s) + ")";
 }
 
 export const todoList = writable<TodoItem[]>([]);
