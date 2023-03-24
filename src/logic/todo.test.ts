@@ -79,3 +79,5 @@ describe("generateColor", () => {
     expect(rand1 === rand2).toBe(false);
   });
 });
+
+// Keine Tests für formatTodo
